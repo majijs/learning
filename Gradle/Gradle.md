@@ -182,10 +182,10 @@ allprojects是对所有project的配置，`包括Root Project`。而subprojects�
 #### apply plugin
 
 ```groovy
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+apply plugin: 'java' /* java是Gradle的核心插件，是内置的，内置插件不需要配置依赖路径 */
+apply plugin: 'idea' /* 同上  让Gradle自动生成Intellij的项目文件，注意gradle插件不再自动应用，所以这里需要指定 */
+apply plugin: 'org.springframework.boot' /* 依赖管理插件，spring-boot-gradle-plugin传递依赖。 */
+apply plugin: 'io.spring.dependency-management' /* 依赖管理，用来传递spring的依赖 */
 ```
 
 apply plugin：'×××'，引入Gradle插件，而Gradle插件大致分为分为两种：
